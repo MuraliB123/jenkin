@@ -35,7 +35,7 @@ pipeline {
                             git config user.email "muralibabu1729@gmail.com"
                             git add .
                             git commit -m "Automated commit: Inserted XML files"
-                            git push origin main
+                            git push origin master
                         '''
                     } else {
                         bat '''
@@ -43,7 +43,7 @@ pipeline {
                             git config user.email "muralibabu1729@gmail.com"
                             git add .
                             git commit -m "Automated commit: Inserted XML files"
-                            git push origin main
+                            git push origin master
                         '''
                     }
                 }
