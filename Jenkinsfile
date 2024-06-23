@@ -14,9 +14,9 @@ pipeline {
                 // Execute the Python script with the folder containing SQL files
                 script {
                     if (isUnix()) {
-                        sh 'python3 insert_xml.py ./path/to/your/sql/files/folder'
+                        sh 'python3 insert_xml.py ./folder'
                     } else {
-                        bat 'python insert_xml.py .\\path\\to\\your\\sql\\files\\folder'
+                        bat 'python insert_xml.py .\\folder'
                     }
                 }
             }
