@@ -26,6 +26,28 @@ pipeline {
             }
         }
 
+        stage('Push Changes') {
+            steps {
+                script {
+                    withCredentials([string(credentialsId: GIT_CREDENTIALS_ID, variable: 'GIT_TOKEN')]) {
+                        if (isUnix()) {
+                            sh 'git config user.name "jenkins"'
+                            sh 'git config user.email "jenkins@example.com"'
+                            sh 'git add .'
+                            sh 'git commit -m "Automated commit by Jenkins"'
+                            sh 'git push https://${GIT_TOKEN}@github.com/MuraliB123/jenkin.git master'
+                        } else {
+                            bat 'git config user.name "jenkins"'
+                            bat 'git config user.email "jenkins@example.com"'
+                            bat 'git add .'
+                            bat 'git commit -m "Automated commit by Jenkins"'
+                            bat 'git push https://${GIT_TOKEN}@github.com/MuraliB123/jenkin.git master'
+                        }
+                    }
+                }
+            }
+        }
+
         stage('Build') {
             steps {
                 // Continue with the build process
