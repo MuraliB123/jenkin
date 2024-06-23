@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        GIT_CREDENTIALS_ID = 'github-token' // The ID of the Git credentials stored in Jenkins
+        GIT_CREDENTIALS_ID = 'github-token1' // The ID of the Git credentials stored in Jenkins
     }
 
     stages {
