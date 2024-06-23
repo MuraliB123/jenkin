@@ -9,7 +9,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Clone the repository from GitHub
-                git clone 'https://github.com/MuraliB123/jenkin.git'
+                git url: 'https://github.com/MuraliB123/jenkin.git', branch: 'master', credentialsId: "${GIT_CREDENTIALS_ID}"
             }
         }
 
