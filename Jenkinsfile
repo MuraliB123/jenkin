@@ -44,6 +44,7 @@ pipeline {
                             git config user.email "muralibabu1729@gmail.com"
                             git add .
                             git commit -m "Automated commit: Inserted XML files"
+                            git remote add origin 'https://github.com/MuraliB123/jenkin.git'
                             git push origin master
                         '''
                     }
