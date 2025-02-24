@@ -45,4 +45,7 @@ function Generate-Changelog {
     Write-Output "Changelog generated successfully at $outputFilePath"
 }
 
-Generate-Changelog -outputFilePath "C:\Users\MuraliB\Documents\examples\xml\changelog.xml" -sqlPath "C:\Users\MuraliB\Documents\examples\xml\sqls"
+
+$sqlPath = Read-Host "Enter the path to the SQL scripts directory"
+$outputFilePath = "changelog.xml"  
+Generate-Changelog -outputFilePath $outputFilePath -sqlPath $sqlPath
